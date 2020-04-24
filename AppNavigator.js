@@ -4,12 +4,12 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 
-import Main from "./components/Main";
+import HomeScreen from "./components/HomeScreen";
 
 const homeStackNavigator = createStackNavigator(
   {
-    Main: {
-      screen: Main,
+    Home: {
+      screen: HomeScreen,
       navigationOptions: {
         headerTitle: () => (
           <TouchableOpacity>
@@ -36,7 +36,7 @@ const homeStackNavigator = createStackNavigator(
     },
   },
   {
-    initialRouteName: "Main",
+    initialRouteName: "Home",
   }
 );
 
@@ -49,25 +49,25 @@ const TabNavigator = createBottomTabNavigator(
       },
     },
     Search: {
-      screen: Main,
+      screen: HomeScreen,
       navigationOptions: {
         tabBarIcon: () => <SimpleLineIcons name="magnifier" size={24} />,
       },
     },
     Library: {
-      screen: Main,
+      screen: HomeScreen,
       navigationOptions: {
         tabBarIcon: () => <SimpleLineIcons name="plus" size={24} />,
       },
     },
     Favorite: {
-      screen: Main,
+      screen: HomeScreen,
       navigationOptions: {
-        tabBarIcon: () => <SimpleLineIcons name="heart" size={24} />,
+        tabBarIcon: (focusd) => <SimpleLineIcons name="heart" size={24} />,
       },
     },
     Profile: {
-      screen: Main,
+      screen: HomeScreen,
       navigationOptions: {
         tabBarIcon: () => <SimpleLineIcons name="user" size={24} />,
       },

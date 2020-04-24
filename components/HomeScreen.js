@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Image } from "react-native";
 
-class Main extends React.Component {
+class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -11,7 +11,7 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   absoluteFill: {
