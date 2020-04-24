@@ -11,6 +11,10 @@ const homeStackNavigator = createStackNavigator(
     Home: {
       screen: HomeScreen,
       navigationOptions: {
+        headerStyle: {
+          backgroundColor: "hsl(120,0%,98%)",
+          shadowColor: "hsl(0,0%,65%)",
+        },
         headerTitle: () => (
           <TouchableOpacity>
             <Image source={require("./assets/companyName.jpg")} />
