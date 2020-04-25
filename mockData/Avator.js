@@ -29,6 +29,24 @@ const Avator = [
     type: "others",
     image: require("../assets/avator/Jared.jpg"),
   },
+  {
+    id: 6,
+    name: "monica",
+    type: "others",
+    image: require("../assets/avator/Monica.jpg"),
+  },
+  {
+    id: 7,
+    name: "gavin",
+    type: "others",
+    image: require("../assets/avator/Gavin.jpg"),
+  },
+  {
+    id: 8,
+    name: "jian-yang",
+    type: "others",
+    image: require("../assets/avator/JianYang.jpg"),
+  },
 ];
 
 export default Avator;

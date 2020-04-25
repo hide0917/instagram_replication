@@ -17,9 +17,6 @@ class StoryMenuBar extends React.Component {
   _createStoryMenuBar() {
     var storyMenuBarComponent = [];
     Avator.map((avator) => {
-      const test = avator.image;
-      const imageSource = "../../../assets/avator/" + "Richard.jpg";
-      console.log(test);
       storyMenuBarComponent.push(
         <View key={avator.id} style={styles.avator}>
           <LinearGradient
