@@ -2,6 +2,8 @@ import React from "react";
 import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
+import Avator from "../../../mockData/Avator";
+
 const activeGradientColor = [
   "hsl(307,95%,35%)",
   "hsl(351,72%,50%)",
@@ -12,6 +14,33 @@ const gradientStartCoordinate = { x: 1, y: 0 };
 const gradientEndCoordinate = { x: 0, y: 1 };
 
 class StoryMenuBar extends React.Component {
+  _createStoryMenuBar() {
+    var storyMenuBarComponent = [];
+    Avator.map((avator) => {
+      const test = avator.image;
+      const imageSource = "../../../assets/avator/" + "Richard.jpg";
+      console.log(test);
+      storyMenuBarComponent.push(
+        <View key={avator.id} style={styles.avator}>
+          <LinearGradient
+            style={styles.linear}
+            colors={activeGradientColor}
+            start={gradientStartCoordinate}
+            end={gradientEndCoordinate}
+          >
+            <View style={styles.dummyLinear}>
+              <Image style={styles.avatorImage} source={avator.image} />
+            </View>
+          </LinearGradient>
+          <Text style={styles.avatorName}>
+            {avator.type === "you" ? "ストーリーズ" : avator.name}
+          </Text>
+        </View>
+      );
+    });
+    return storyMenuBarComponent;
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -21,86 +50,7 @@ class StoryMenuBar extends React.Component {
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
         >
-          <View style={styles.avator}>
-            <LinearGradient
-              style={styles.linear}
-              colors={passiveGradientColor}
-              start={gradientStartCoordinate}
-              end={gradientEndCoordinate}
-            >
-              <View style={styles.dummyLinear}>
-                <Image
-                  style={styles.avatorImage}
-                  source={require("../../../assets/avator/Richard.jpg")}
-                />
-              </View>
-            </LinearGradient>
-            <Text style={styles.avatorName}>ストーリーズ</Text>
-          </View>
-          <View style={styles.avator}>
-            <LinearGradient
-              style={styles.linear}
-              colors={activeGradientColor}
-              start={gradientStartCoordinate}
-              end={gradientEndCoordinate}
-            >
-              <View style={styles.dummyLinear}>
-                <Image
-                  style={styles.avatorImage}
-                  source={require("../../../assets/avator/Erlich.jpg")}
-                />
-              </View>
-            </LinearGradient>
-            <Text style={styles.avatorName}>erlich</Text>
-          </View>
-          <View style={styles.avator}>
-            <LinearGradient
-              style={styles.linear}
-              colors={activeGradientColor}
-              start={gradientStartCoordinate}
-              end={gradientEndCoordinate}
-            >
-              <View style={styles.dummyLinear}>
-                <Image
-                  style={styles.avatorImage}
-                  source={require("../../../assets/avator/Gilfoyle.jpg")}
-                />
-              </View>
-            </LinearGradient>
-            <Text style={styles.avatorName}>gilfoyle</Text>
-          </View>
-          <View style={styles.avator}>
-            <LinearGradient
-              style={styles.linear}
-              colors={activeGradientColor}
-              start={gradientStartCoordinate}
-              end={gradientEndCoordinate}
-            >
-              <View style={styles.dummyLinear}>
-                <Image
-                  style={styles.avatorImage}
-                  source={require("../../../assets/avator/Dinesh.jpg")}
-                />
-              </View>
-            </LinearGradient>
-            <Text style={styles.avatorName}>dinesh</Text>
-          </View>
-          <View style={styles.avator}>
-            <LinearGradient
-              style={styles.linear}
-              colors={activeGradientColor}
-              start={gradientStartCoordinate}
-              end={gradientEndCoordinate}
-            >
-              <View style={styles.dummyLinear}>
-                <Image
-                  style={styles.avatorImage}
-                  source={require("../../../assets/avator/Jared.jpg")}
-                />
-              </View>
-            </LinearGradient>
-            <Text style={styles.avatorName}>jared</Text>
-          </View>
+          {this._createStoryMenuBar()}
         </ScrollView>
       </View>
     );
