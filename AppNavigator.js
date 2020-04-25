@@ -4,7 +4,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 
-import HomeScreen from "./components/HomeScreen";
+import HomeScreen from "./components/home/HomeScreen";
 
 const homeStackNavigator = createStackNavigator(
   {

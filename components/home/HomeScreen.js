@@ -1,11 +1,16 @@
 import React from "react";
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View, Image, ScrollView } from "react-native";
+
+import StoryMenuBar from "./subScreen/StoryMenuBer";
 
 class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={require("../assets/companyName.jpg")} />
+        <ScrollView>
+          <StoryMenuBar></StoryMenuBar>
+          <Image source={require("../../assets/companyName.jpg")} />
+        </ScrollView>
       </View>
     );
   }
@@ -14,14 +19,9 @@ class HomeScreen extends React.Component {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  absoluteFill: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "hsl(0,0%,100%)",
     alignItems: "center",
     justifyContent: "center",
   },
