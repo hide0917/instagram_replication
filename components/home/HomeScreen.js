@@ -9,7 +9,7 @@ class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView>
           <StoryMenuBar></StoryMenuBar>
-          <Image source={require("../../assets/companyName.jpg")} />
+          <Image source={require("../../assets/companyName.png")} />
         </ScrollView>
       </View>
     );

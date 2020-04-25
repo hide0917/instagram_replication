@@ -17,7 +17,10 @@ const homeStackNavigator = createStackNavigator(
         },
         headerTitle: () => (
           <TouchableOpacity>
-            <Image source={require("./assets/companyName.jpg")} />
+            <Image
+              style={{ width: 110, height: 32, marginTop: 2 }}
+              source={require("./assets/companyName.png")}
+            />
           </TouchableOpacity>
         ),
         headerLeft: () => (
