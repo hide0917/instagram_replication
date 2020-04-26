@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Image, TouchableHighlight } from "react-native";
+import { TouchableOpacity, Image } from "react-native";
 import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
@@ -24,20 +24,20 @@ const homeStackNavigator = createStackNavigator(
           </TouchableOpacity>
         ),
         headerLeft: () => (
-          <TouchableHighlight
+          <TouchableOpacity
             style={{ marginLeft: 16 }}
-            onPress={() => alert("This is a button!")}
+            onPress={() => alert("This is mock button!")}
           >
             <SimpleLineIcons name="camera" size={24} />
-          </TouchableHighlight>
+          </TouchableOpacity>
         ),
         headerRight: () => (
-          <TouchableHighlight
+          <TouchableOpacity
             style={{ marginRight: 16 }}
-            onPress={() => alert("This is a button!")}
+            onPress={() => alert("This is mock button!")}
           >
             <SimpleLineIcons name="paper-plane" size={24} />
-          </TouchableHighlight>
+          </TouchableOpacity>
         ),
       },
     },
