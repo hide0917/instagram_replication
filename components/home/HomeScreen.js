@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet, View, Image, ScrollView } from "react-native";
+import { StyleSheet, View, Text, ScrollView } from "react-native";
 
 import StoryMenuBar from "./subScreen/StoryMenuBer";
+import MainMenuBar from "./subScreen/MainMenuBer";
 
 class HomeScreen extends React.Component {
   render() {
@@ -9,7 +10,7 @@ class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView>
           <StoryMenuBar></StoryMenuBar>
-          <Image source={require("../../assets/companyName.png")} />
+          <MainMenuBar></MainMenuBar>
         </ScrollView>
       </View>
     );
